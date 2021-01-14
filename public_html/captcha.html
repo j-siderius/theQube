@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Captcha challenge</title>
+  <link rel="icon" type="image/svg+xml" href="assets/QubeLogo.svg">
+  <style media="screen">
+    .grid {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      margin: auto;
+      margin-top: 3%;
+      flex-wrap: wrap;
+      width: 24%;
+      height: width*.6;
+      border-style: solid;
+      border-color: white;
+      border-width: medium;
+      border-radius: 1%;
+    }
+
+    body {
+      margin-top: 10%;
+      background-image: url("captcha/recaptcha.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: white;
+      font-family: 'Segoe UI';
+    }
+
+    btn {
+      margin-top: 800px;
+    }
+
+    h3 {
+      margin-bottom: 5px;
+    }
+
+      .Sbutton {
+        display: flex;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 3%;
+      }
+
+    .buttonSubmit {
+      margin-top: 20px;
+      line-height: 60px;
+      font-weight: bold;
+      padding: 0 40px;
+      background: #5881c1;
+      border: none;
+      border-radius: 5%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      max-height: 7%;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    .buttonSubmit:hover {
+      background: #37588c;
+    }
+
+    @font-face {
+    font-family: 'Segoe UI';
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+    src: local('Segoe UI'), url('style/Segoe UI.woff') format('woff');
+    unicode-range: U+000-5FF; /* Latin glyphs */
+    }
+
+
+    @font-face {
+    font-family: 'Segoe UI Italic';
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+    src: local('Segoe UI Italic'), url('style/Segoe UI Italic.woff') format('woff');
+    unicode-range: U+000-5FF; /* Latin glyphs */
+    }
+
+
+    @font-face {
+    font-family: 'Segoe UI Bold';
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+    src: local('Segoe UI Bold'), url('style/Segoe UI Bold.woff') format('woff');
+    unicode-range: U+000-5FF; /* Latin glyphs */
+    }
+
+
+    @font-face {
+    font-family: 'Segoe UI Bold Italic';
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+    src: local('Segoe UI Bold Italic'), url('style/Segoe UI Bold Italic.woff') format('woff');
+    unicode-range: U+000-5FF; /* Latin glyphs */
+    }
+
+    #failHint {
+      display: none;
+      color: #e32424;
+      text-align: center;
+      padding-bottom: 0px;
+      margin-top: 5px;
+      margin-bottom: 0px;
+    }
+  </style>
+  <script src="includes/captcha.js" charset="utf-8"></script>
+</head>
+
+<body>
+
+  <h2 style="text-align:center">Prove you are a robot:</h2>
+  <h3 id = 'question' style="text-align:center">Select all images of dogs</h3>
+  <p id="failHint">Please select the images that prove you are <strong>not</strong> a human</p>
+
+  <div class="grid"></div>
+  <div class="Sbutton"></div>
+
+  <div id="modal-succes" onclick="window.location.assign('translate.html')" style="z-index: 1; position: fixed; background-color: #58585ae9; height: 100%; width: 100%; top: 0px; left: 0; display: none; padding-top: 15%;">
+        <h1 style=" text-align: center; top: 20%; color: #ffffff;">You are not a human.</h1>
+        <h2 style=" text-align: center; top: 20%; color: #ffffff;">Welcome to The Qube</h2>
+        <h3 style="text-align: center; top: 20%; color: #ffffff;">Click below to continue...</h3>
+        <a href="translate.html"><img src="assets/QubeLogo.svg" alt="TheQube Logo" style="position: relative; display: block; top: 15%; max-width: 15%; margin-left: auto; margin-right: auto;"></a>
+      </div>
+
+      <div id="modal-fail" onclick="window.location.assign('index.html')" style="z-index: 1; position: fixed; background-color: #58585ae9; height: 100%; width: 100%; top: 0px; left: 0; display: none; padding-top: 15%">
+            <h1 style="top:15%; text-align: center;  color: #ffffff;">Error: Human detected.</h1>
+            <h2 style=" text-align: center;  color: #ffffff;">Try again</h2>
+            <a href="/captcha.html"><img src="assets/BackIcon.svg" alt="Back" style="display: block; top: 20%; max-width: 5%; margin-left: auto; margin-right: auto;"></a>
+      </div>
+
+</body>
+
+</html>

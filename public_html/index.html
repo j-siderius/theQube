@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>The Qube</title>
+	<link rel="icon" type="image/svg+xml" href="assets/QLeft.png">
+	<link rel="preload" as="font" href="style/Segoe UI.woff" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" as="font" href="style/Segoe UI Italic.woff" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" as="font" href="style/Segoe UI Bold.woff" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" as="font" href="style/Segoe UI Bold Italic.woff" type="font/woff2" crossorigin="anonymous">
+	<style media="screen">
+		body {
+			background-image: url("assets/IndexBackground.svg");
+			background-size: cover;
+			background-repeat: no-repeat;
+
+			font-family: 'Segoe UI';
+			font-size: 2vw;
+			text-align: center;
+
+			margin-top: 41%;
+		}
+
+		.prompt {
+			margin: auto;
+			width: 30%;
+			height: 40%;
+		}
+
+		a.button {
+			/* appearance: button; */
+
+			text-decoration: none;
+
+			background-color: #5881C1;
+			color: #ffffff;
+		}
+
+
+		@font-face {
+			font-family: 'Segoe UI';
+			font-display: swap;
+			font-style: normal;
+			font-weight: normal;
+			src: local('Segoe UI'), url('style/Segoe UI.woff') format('woff');
+			unicode-range: U+000-5FF;
+			/* Latin glyphs */
+		}
+
+
+		@font-face {
+			font-family: 'Segoe UI Italic';
+			font-display: swap;
+			font-style: normal;
+			font-weight: normal;
+			src: local('Segoe UI Italic'), url('style/Segoe UI Italic.woff') format('woff');
+			unicode-range: U+000-5FF;
+			/* Latin glyphs */
+		}
+
+
+		@font-face {
+			font-family: 'Segoe UI Bold';
+			font-display: swap;
+			font-style: normal;
+			font-weight: normal;
+			src: local('Segoe UI Bold'), url('style/Segoe UI Bold.woff') format('woff');
+			unicode-range: U+000-5FF;
+			/* Latin glyphs */
+		}
+
+
+		@font-face {
+			font-family: 'Segoe UI Bold Italic';
+			font-display: swap;
+			font-style: normal;
+			font-weight: normal;
+			src: local('Segoe UI Bold Italic'), url('style/Segoe UI Bold Italic.woff') format('woff');
+			unicode-range: U+000-5FF;
+			/* Latin glyphs */
+		}
+	</style>
+</head>
+
+<body>
+	<div class="prompt">
+		<a href="#" class="button" id="button">Unfortunately, The Qube experience does not support this device or browser.</a>
+	</div>
+
+	<script type="text/javascript">
+			var sUserAgent = navigator.userAgent;
+			if (screen.width <= 600 || screen.height <= 600) {
+				document.getElementById("button").innerHTML = "Unfortunately, The Qube experience is only available on desktop/laptop at the moment.";
+				document.getElementById("button").href = "#";
+				document.getElementById("button").style.cursor = "not-allowed";
+				document.getElementById("button").style.backgroundColor = "rgba(14, 89, 207,0.3)";
+			} else if (sUserAgent.indexOf("Trident") > -1) {
+				document.getElementById("button").innerHTML = "Unfortunately, The Qube experience is only available on modern browsers such as Mozilla Firefox, Google Chrome, Apple Safari, Opera or Microsoft Edge.";
+				document.getElementById("button").href = "#";
+				document.getElementById("button").style.cursor = "not-allowed";
+				document.getElementById("button").style.backgroundColor = "rgba(14, 89, 207,0.3)";
+			} else {
+				document.getElementById("button").innerHTML = "Enter The Qube";
+				document.getElementById("button").href = "captcha.html";
+				document.getElementById("button").style.cursor = "pointer";
+				document.getElementById("button").style.backgroundColor = "rgba(14, 89, 207, 0.7)";
+				document.getElementById("button").style.borderRadius = "5px";
+				document.getElementById("button").style.padding = "10px";
+			}
+	</script>
+</body>
+
+</html>
